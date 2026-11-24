@@ -3,31 +3,42 @@
     padding:0px;
     box-sizing: border-box;
 }
+
+/* Placeholder page layout: two sidebars and a main area side by side */
 .container{
     display:flex;
-    
 }
 main{
     background-color: aquamarine;
-    width: 60vw;
+    width: 60%;
     height:80vh;
-
 }
 .left-sidebar{
     background-color: burlywood;
-    width:20vw;
+    width:20%;
     height:80vh;
-    
-
 }
 .right-sidebar{
     background-color: darkblue;
-    width:20vw;
+    color: white;
+    width:20%;
     height:80vh;
-
 }
 footer{
     background-color: darkmagenta;
+    color: white;
     height:20vh;
+}
 
+/* On phones, stack the boxes instead of squeezing three columns side by side */
+@media screen and (max-width:768px){
+    .container{
+        flex-direction: column;
+    }
+    main,
+    .left-sidebar,
+    .right-sidebar{
+        width: 100%;
+        height: 30vh;
+    }
 }
