@@ -34,6 +34,11 @@ nav{
 }
 .burger{
     display:none;
+    /* it's a <button> now: remove the default button look */
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 .burger div{
     width: 25px;
