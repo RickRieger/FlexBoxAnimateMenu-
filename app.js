@@ -4,7 +4,10 @@ const navSlide = () => {
     const navLinks = document.querySelectorAll('.nav-links li');
      //toggle nav
     burger.addEventListener('click',()=>{
-        nav.classList.toggle('nav-active');
+        const isOpen = nav.classList.toggle('nav-active');
+        // tell screen readers whether the menu is open
+        burger.setAttribute('aria-expanded', isOpen);
+        burger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
         navLinks.forEach((link, index) =>{
             if(link.style.animation){
                 link.style.animation = ''
